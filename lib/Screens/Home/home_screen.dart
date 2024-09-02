@@ -1,5 +1,6 @@
 import 'package:e_shop/Screens/Home/Widget/category.dart';
 import 'package:e_shop/Screens/Home/Widget/image_slider.dart';
+import 'package:e_shop/Screens/Home/Widget/product_cart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_shop/Screens/Home/Widget/custom_search_bar.dart';
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding:  EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -50,12 +51,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               GridView.builder(
-                // physics: const NeverScrollableScrollPhysics(),
-                // shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.78,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20
+                ),
                 itemCount: products.length,
                 itemBuilder: (context, index) {
-                  return null;
+                  return ProductCard(product: products[index]);
                 },
 
               )

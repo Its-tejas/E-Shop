@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Product {
@@ -24,7 +25,7 @@ final List<Product> products = [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
     image: "images/all/wireless.png",
     price: 120,
-    seller: "Tariqul isalm",
+    seller: "Tech Store",
     colors: [
       Colors.black,
       Colors.blue,
