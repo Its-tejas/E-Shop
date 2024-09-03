@@ -30,7 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
           child: SingleChildScrollView(
             child: Column(
                     children: [
-            const DetailAppBar(),
+             DetailAppBar(product: widget.product,),
             DetailImageSlider(
                 onChange: (index) {
                   setState(() {

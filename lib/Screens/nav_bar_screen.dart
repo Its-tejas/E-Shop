@@ -1,9 +1,9 @@
 import 'package:e_shop/Screens/Cart/cart_screen.dart';
 import 'package:e_shop/Screens/Home/home_screen.dart';
-import 'package:e_shop/Screens/favourite.dart';
 import 'package:e_shop/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'Favourite/favourite.dart';
 
 class NavBarScreen extends StatefulWidget{
   const NavBarScreen({super.key});

@@ -33,9 +33,10 @@ class _CartScreenState extends State<CartScreen> {
     }
 
     return Scaffold(
-      bottomSheet: const CheckOutBox(),
       backgroundColor: kcontentColor,
+      bottomSheet: const CheckOutBox(),
       body: SafeArea(
+
           child: Column(
         children: [
           Padding(
@@ -58,7 +59,7 @@ class _CartScreenState extends State<CartScreen> {
                 const Text('My Cart',
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
-                SizedBox(),
+                const SizedBox(),
               ],
             ),
           ),

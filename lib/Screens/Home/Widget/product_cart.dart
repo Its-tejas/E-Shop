@@ -1,4 +1,5 @@
 import 'package:e_shop/Models/Product.dart';
+import 'package:e_shop/Provider/favourite_provider.dart';
 import 'package:e_shop/Screens/Detail/detail_screen.dart';
 import 'package:e_shop/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,6 +11,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavouriteProvider.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(product: product,),));
@@ -37,10 +39,10 @@ class ProductCard extends StatelessWidget {
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     product.title,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                 ),
                 const SizedBox(
@@ -79,7 +81,7 @@ class ProductCard extends StatelessWidget {
             child: Container(
               height: 40,
                 width: 40,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: kprimaryColor,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
@@ -87,9 +89,9 @@ class ProductCard extends StatelessWidget {
                   )
                 ),
               child: GestureDetector(onTap: () {
-
+                provider.toggleFavourite(product);
               },
-              child: Icon(Icons.favorite_border,
+              child: Icon(provider.isExist(product) ? Icons.favorite : Icons.favorite_border,
               color: Colors.white,
                   size: 22),),
             ),
